@@ -1,0 +1,25 @@
+| =========================================================
+| Brute Force Detection Query — Splunk SPL
+| Project: SSH Brute Force Detection Using Splunk SIEM
+| Author: Shakthi
+| =========================================================
+
+| --- Primary Detection: Failed Logins > 10 from a single IP ---
+index=main sourcetype=linux_secure "Failed password"
+| stats count by src_ip
+| where count > 10
+| sort - count
+| rename src_ip as "Attacker IP", count as "Failed Attempts"
+
+| --- Verify all logs are reaching Splunk ---
+index=main sourcetype=linux_secure
+
+| --- Time-based failed login analysis (per hour) ---
+index=main sourcetype=linux_secure "Failed password"
+| timechart span=1h count by src_ip
+
+| --- Identify targeted usernames ---
+index=main sourcetype=linux_secure "Failed password"
+| rex field=_raw "Failed password for (?:invalid user )?(?P<username>\S+)"
+| stats count by username, src_ip
+| sort - count

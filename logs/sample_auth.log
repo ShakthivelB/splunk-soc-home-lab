@@ -1,0 +1,19 @@
+# sample_auth.log
+# Sample SSH authentication log entries from /var/log/auth.log
+# Generated during brute force simulation using Hydra on the target Linux Mint machine
+
+Apr 29 10:01:33 linuxmint sshd[2341]: Failed password for invalid user admin from 192.168.1.187 port 52341 ssh2
+Apr 29 10:01:34 linuxmint sshd[2342]: Failed password for invalid user root from 192.168.1.187 port 52342 ssh2
+Apr 29 10:01:35 linuxmint sshd[2343]: Failed password for invalid user test from 192.168.1.187 port 52343 ssh2
+Apr 29 10:01:36 linuxmint sshd[2344]: Failed password for invalid user user from 192.168.1.187 port 52344 ssh2
+Apr 29 10:01:37 linuxmint sshd[2345]: Failed password for invalid user shakthi from 192.168.1.187 port 52345 ssh2
+Apr 29 10:01:38 linuxmint sshd[2346]: Failed password for invalid user pi from 192.168.1.187 port 52346 ssh2
+Apr 29 10:01:39 linuxmint sshd[2347]: Failed password for invalid user ubuntu from 192.168.1.187 port 52347 ssh2
+Apr 29 10:01:40 linuxmint sshd[2348]: Failed password for invalid user kali from 192.168.1.187 port 52348 ssh2
+Apr 29 10:01:41 linuxmint sshd[2349]: Failed password for invalid user admin from 192.168.1.187 port 52349 ssh2
+Apr 29 10:01:42 linuxmint sshd[2350]: Failed password for invalid user root from 192.168.1.187 port 52350 ssh2
+Apr 29 10:01:43 linuxmint sshd[2351]: Failed password for invalid user test from 192.168.1.187 port 52351 ssh2
+Apr 29 10:01:44 linuxmint sshd[2352]: Failed password for invalid user postgres from 192.168.1.187 port 52352 ssh2
+Apr 29 10:01:45 linuxmint sshd[2353]: Disconnected from invalid user admin 192.168.1.187 port 52341 [preauth]
+Apr 29 10:02:01 linuxmint sshd[2360]: Accepted password for shakthi from 192.168.1.100 port 22 ssh2
+Apr 29 10:02:02 linuxmint sshd[2361]: pam_unix(sshd:session): session opened for user shakthi by (uid=0)

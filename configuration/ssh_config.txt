@@ -1,0 +1,13 @@
+# SSH Configuration Reference — Linux Mint (Target Machine)
+
+# Verify SSH service is running
+sudo systemctl status ssh
+
+# Enable SSH on startup
+sudo systemctl enable ssh
+
+# Start SSH service
+sudo systemctl start ssh
+
+# Default SSH port: 22
+# SSH logs are written to: /var/log/auth.log

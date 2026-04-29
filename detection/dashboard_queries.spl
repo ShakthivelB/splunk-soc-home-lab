@@ -1,0 +1,27 @@
+| =========================================================
+| Splunk Dashboard Queries
+| Project: SSH Brute Force Detection Using Splunk SIEM
+| =========================================================
+
+| --- Panel 1: Total Failed Login Attempts ---
+index=main sourcetype=linux_secure "Failed password"
+| stats count as total_failures
+
+| --- Panel 2: Failed Logins by IP (Table) ---
+index=main sourcetype=linux_secure "Failed password"
+| stats count by src_ip
+| sort - count
+| rename src_ip as "Source IP", count as "Failed Attempts"
+
+| --- Panel 3: Failed Logins Over Time (Time Chart) ---
+index=main sourcetype=linux_secure "Failed password"
+| timechart span=5m count
+
+| --- Panel 4: Top Attacked Usernames ---
+index=main sourcetype=linux_secure "Failed password"
+| rex field=_raw "Failed password for (?:invalid user )?(?P<username>\S+)"
+| top limit=10 username
+
+| --- Panel 5: Summary Statistics ---
+index=main sourcetype=linux_secure "Failed password"
+| stats count as attempts, dc(src_ip) as unique_ips, dc(username) as unique_users
