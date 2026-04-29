@@ -6,7 +6,7 @@
 # WARNING: For educational use only in isolated lab environment.
 # Do NOT run against systems you do not own.
 
-TARGET_IP="192.168.1.133"
+TARGET_IP="192.168.0.100"
 USERS_FILE="users.txt"
 PASSWORDS_FILE="passwords.txt"
 
